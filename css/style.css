@@ -82,8 +82,8 @@ header {
 
 /* Global Styles */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #ffdd57; /* Daisy Yellow */
+  --primary-color: #ffdd57;
+  --secondary-color: #ffdd57;
   --text-color: #333;
   --bg-color: #fff;
   --footer-bg: #f8f8f8;
@@ -103,13 +103,26 @@ body {
 }
 
 /* Header Styles */
-header {
+.header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Logo on the left, nav on the right */
   align-items: center;
   padding: 1rem 2rem;
-  background: white;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* Center nav links */
+  align-items: center;
+  flex-grow: 1; /* Ensure the nav takes up full width */
+  position: relative; /* Make it easier to handle positioning of hamburger */
 }
 
 .nav a {
@@ -118,9 +131,96 @@ header {
   color: var(--text-color);
 }
 
-.nav a:hover {
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem; /* Space between nav links */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.nav-links li a:hover {
   color: var(--primary-color);
 }
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Mobile Dropdown Menu */
+.mobile-menu {
+  display: none; /* Hide mobile menu by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 10;
+}
+
+.mobile-menu.active {
+  display: block; /* Show menu when active */
+}
+
+.mobile-menu a {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Adjustments - Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links by default on small screens */
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem;
+  }
+
+  /* Show Hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* When the hamburger is clicked, show the mobile menu */
+  .mobile-menu.active {
+    display: block;
+  }
+
+  /* Center the mobile menu */
+  .mobile-menu a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--primary-color);
+  }
+
+}
+/* Responsive Adjustments - Desktop */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    flex-direction: row; /* Horizontal layout for links */
+  }
+}
+
 
 /* Hero Section */
 .hero {

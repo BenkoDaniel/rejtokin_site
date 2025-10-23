@@ -1,51 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REJTŐ KIN</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REJTŐ KIN</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <header class="header">
-    <div class="logo">REJTŐ KIN</div>
-    <nav class="nav">
-      <a href="rolunk.html">Rólunk</a>
-      <a href="#kapcsolat">Kapcsolat</a>
-      <a href="#kupa">A kupáról</a>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="logo">REJTŐ KIN</div>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="rolunk.html">Rólunk</a>
+                <li><a href="#kapcsolat">Kapcsolat</a>
+                <li><a href="#kupa">A kupáról</a>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <h1>REJTŐ KIN</h1>
-    <p>Demo page</p>
-    <a href="#kapcsolat" class="cta-btn">Get in Touch</a>
-  </section>
+    <section class="hero">
+        <h1>REJTŐ KIN</h1>
+        <p>Demo page</p>
+        <a href="#kapcsolat" class="cta-btn">Get in Touch</a>
+    </section>
 
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>Your short story here.</p>
-  </section>
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Your short story here.</p>
+    </section>
 
-  <section id="products" class="products">
-    <h2>Our Services</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="images/example.jpg" alt="Product">
-        <h3>Service 1</h3>
-      </div>
-      <div class="product-card">
-        <img src="images/example.jpg" alt="Product">
-        <h3>Service 2</h3>
-      </div>
-    </div>
-  </section>
+    <section id="products" class="products">
+        <h2>Our Services</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/example.jpg" alt="Product">
+                <h3>Service 1</h3>
+            </div>
+            <div class="product-card">
+                <img src="images/example.jpg" alt="Product">
+                <h3>Service 2</h3>
+            </div>
+        </div>
+    </section>
 
-  <footer id="contact" class="footer">
-    <p>Contact us at <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
-    <div class="socials">
-      <a href="#">Instagram</a> | <a href="#">Facebook</a>
-    </div>
-  </footer>
+    <footer id="contact" class="footer">
+        <p>Keress minket a <a href="mailto:info@yourdomain.com">info@yourdomain.com</a> címen!</p>
+
+        <div class="socials">
+            <a href="https://www.instagram.com/rejto_kinsta" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/kinkuparkk" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.createElement("div"); // Create the mobile menu dynamically
+
+        // Add the links to the mobile menu
+        mobileMenu.classList.add("mobile-menu");
+        mobileMenu.innerHTML = `
+            <a href="rolunk.html">Rólunk</a>
+            <a href="#kapcsolat">Kapcsolat</a>
+            <a href="#kupa">A kupáról</a>
+        `;
+        document.querySelector(".header .nav").appendChild(mobileMenu);
+
+        // Toggle mobile menu visibility when hamburger is clicked
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+    </script>
 </body>
+
 </html>
