@@ -12,11 +12,18 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">REJTŐ KIN</div>
+        <a href="index.html" class="logolink">
+            <div class="logo">REJTŐ KIN</div>
+        </a>
         <nav class="nav">
-            <a href="index.html">Főoldal</a>
-            <a href="rolunk.html">Rólunk</a>
-            <a href="#kapcsolat">Kapcsolat</a>
+            <ul class="nav-links">
+                <li><a href="rolunk.html">Rólunk</a>
+                <li><a href="#kapcsolat">Kapcsolat</a>
+                <li><a href="#kupa">A kupáról</a>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
@@ -60,7 +67,7 @@
 
     <!-- Footer -->
     <footer id="contact" class="footer">
-        <p>Keress minket a  <a href="mailto:info@yourdomain.com">info@yourdomain.com</a> címen!</p>
+        <p>Keress minket a <a href="mailto:info@yourdomain.com">info@yourdomain.com</a> címen!</p>
 
         <div class="socials">
             <a href="https://www.instagram.com/rejto_kinsta" target="_blank" aria-label="Instagram">
@@ -71,6 +78,25 @@
             </a>
         </div>
     </footer>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.createElement("div"); // Create the mobile menu dynamically
+
+        // Add the links to the mobile menu
+        mobileMenu.classList.add("mobile-menu");
+        mobileMenu.innerHTML = `
+            <a href="rolunk.html">Rólunk</a>
+            <a href="#kapcsolat">Kapcsolat</a>
+            <a href="#kupa">A kupáról</a>
+        `;
+        document.querySelector(".header .nav").appendChild(mobileMenu);
+
+        // Toggle mobile menu visibility when hamburger is clicked
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+    </script>
+
 </body>
 
 </html>
