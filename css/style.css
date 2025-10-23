@@ -83,10 +83,10 @@ header {
 /* Global Styles */
 :root {
   --primary-color: #ffdd57;
-  --secondary-color: #ffdd57;
+  --secondary-color: #007bff;
   --text-color: #333;
   --bg-color: #fff;
-  --footer-bg: #f8f8f8;
+  --footer-bg: #f8f8f88f;
 }
 
 * {
@@ -232,7 +232,7 @@ body {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background: var(--secondary-color);
+  background: var(--primary-color);
   color: white;
 }
 
@@ -313,7 +313,7 @@ body {
 }
 
 .footer a {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
