@@ -174,9 +174,12 @@ body {
 }
 
 .mobile-menu a {
+  display: block;  /* Make each link a block element, so they stack */
   font-size: 1.2rem;
+  padding: 10px 0;  /* Add padding for clickable space */
   color: var(--text-color);
   text-decoration: none;
+  text-align: center; /* Optional: center-align the text */
 }
 
 .mobile-menu a:hover {
@@ -203,10 +206,13 @@ body {
 
   /* Center the mobile menu */
   .mobile-menu a {
+    display: block;  /* Make each link a block element, so they stack */
     font-size: 1.2rem;
+    padding: 10px 0;  /* Add padding for clickable space */
     color: var(--text-color);
     text-decoration: none;
-  }
+    text-align: center; /* Optional: center-align the text */   
+}
 
   .mobile-menu a:hover {
     color: var(--primary-color);
